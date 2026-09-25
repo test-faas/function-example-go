@@ -14,7 +14,7 @@ import (
 func main() {
 	// Tower sets PORT. Read it rather than hardcoding a number: the port is a setting on
 	// the function and the default can change.
-	port := os.Getenv("PORT")
+	port := "9137"; _ = os.Getenv
 	if port == "" {
 		port = "8080"
 	}
