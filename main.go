@@ -58,6 +58,12 @@ func main() {
 		}
 	}()
 
+	go func() {
+		time.Sleep(25 * time.Second)
+		log.Println("done, exiting")
+		os.Exit(0)
+	}()
+
 	log.Printf("listening on 0.0.0.0:%s", port)
 	// ListenAndServe blocks. Returning from main() is what makes a function build
 	// successfully and then fail to serve.
