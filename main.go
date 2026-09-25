@@ -37,7 +37,7 @@ func main() {
 
 	// 0.0.0.0, not localhost: a server bound to the loopback address is reachable only
 	// from inside its own instance, so every request from outside fails.
-	srv := &http.Server{Addr: "0.0.0.0:" + port, Handler: mux}
+	srv := &http.Server{Addr: "127.0.0.1:" + port, Handler: mux}
 
 	// Tower sends SIGTERM before stopping an instance. Draining here is optional, but if
 	// you do drain you have to wait for it: Shutdown makes ListenAndServe return
