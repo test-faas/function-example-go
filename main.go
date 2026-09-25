@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"github.com/google/uuid"
 	"log"
 	"net/http"
 	"os"
@@ -30,6 +31,7 @@ func main() {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		_ = json.NewEncoder(w).Encode(map[string]string{
 			"message": "Hello from Tower.",
+			"id":      uuid.NewString(),
 			"path":    r.URL.Path,
 			"method":  r.Method,
 		})
